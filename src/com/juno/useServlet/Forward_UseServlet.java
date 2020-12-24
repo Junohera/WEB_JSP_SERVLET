@@ -37,10 +37,10 @@ public class Forward_UseServlet extends HttpServlet {
 		
 		if ("hong".equals(userId) && "1234".equals(userPwd)) {
 			request.setAttribute("name", "홍길동");
-			url = "02/09_Forward_UseServlet_ok.jsp";
+			url = "03/09_Forward_UseServlet_ok.jsp";
 			
 		} else {
-			url = "02/09_Forward_UseServlet.jsp";
+			url = "03/09_Forward_UseServlet.jsp";
 		}
 		
 		RequestDispatcher dp = request.getRequestDispatcher(url);

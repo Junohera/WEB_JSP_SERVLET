@@ -15,7 +15,7 @@
  -->
  	<form method="POST" action="../Forward_UseServlet">
  		<label for ="userId">id: </label>
- 		<input type="text" name="userId" id="userId">><br>
+ 		<input type="text" name="userId" id="userId"><br>
  		<label for="userPwd">pwd: </label>
  		<input type="password" name="userPwd" id="userPwd"><br>
  		<input type="submit" value="login">

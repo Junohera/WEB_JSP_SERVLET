@@ -1,6 +1,8 @@
 package com.juno.useServlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,22 +21,38 @@ public class Forward_UseServlet extends HttpServlet {
      */
     public Forward_UseServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setCharacterEncoding("UTF-8"); // 내보내는 한글 지원 인코딩 방식 지정
+		request.setCharacterEncoding("UTF-8"); // 입력되는 한글 지원 인코딩 방식 지정
+
+		String url = null;
+		
+		String userId = request.getParameter("userId");
+		String userPwd = request.getParameter("userPwd");
+		
+		if ("hong".equals(userId) && "1234".equals(userPwd)) {
+			request.setAttribute("name", "홍길동");
+			url = "02/09_Forward_UseServlet_ok.jsp";
+			
+		} else {
+			url = "02/09_Forward_UseServlet.jsp";
+		}
+		
+		RequestDispatcher dp = request.getRequestDispatcher(url);
+		dp.forward(request, response); 
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		response.setCharacterEncoding("UTF-8"); // 내보내는 한글 지원 인코딩 방식 지정
+		request.setCharacterEncoding("UTF-8"); // 입력되는 한글 지원 인코딩 방식 지정
 		doGet(request, response);
 	}
 

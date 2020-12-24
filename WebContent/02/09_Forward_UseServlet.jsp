@@ -13,7 +13,7 @@
 	서블릿을 사용한다는 것은 form 태그의 Action속성의 대상을 jsp파일로 하는 것이 아니라 따로 명명되어진 웹클래스(서블릿)으로 연결하고, 해당 필요한 처리를 서블릿에서 처리한 후 결과를
 	결과페이지(jsp) 파일로 forward하는 것을 의미합니다. 
  -->
- 	<form method="POST" action="">
+ 	<form method="POST" action="../Forward_UseServlet">
  		<label for ="userId">id: </label>
  		<input type="text" name="userId" id="userId">><br>
  		<label for="userPwd">pwd: </label>
